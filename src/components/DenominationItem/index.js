@@ -1,11 +1,23 @@
 // Write your code here
+import './index.css'
+
 const DenominationItem = props => {
-  const {denominationsDetails} = props
-  const {value} = denominationsDetails
+  const {denominationDetails, updateBalance} = props
+  const {value} = denominationDetails
+
+  const onClickDenomination = () => {
+    updateBalance(value)
+  }
 
   return (
-    <li>
-      <button type="button">{value}</button>
+    <li className="denomination-item">
+      <button
+        type="button"
+        className="denomination-button"
+        onClick={onClickDenomination}
+      >
+        {value}
+      </button>
     </li>
   )
 }
